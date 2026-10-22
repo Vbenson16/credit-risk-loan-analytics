@@ -1,15 +1,26 @@
-## Credora Finance
+# Credit Risk & Loan Approval Analytics Platform
+**Credora Finance · Data Science Internship, Internmo (Jul–Oct 2026)**
+
+**Tools:** Python, PostgreSQL, XGBoost, SHAP, Scikit-Learn, Tableau
+
 This project builds a model that predicts whether a disbursed loan will default, based on applicant features such as debt-to-income ratio, credit score and monthly income. It turns the predicted probability into a risk score from 0 to 100, with Low, Medium and High risk bands, and saves a scored customer table for the dashboard.
 
+![Dashboard](images/dashboard_full.png)
+
+## Key findings
+- Default rate rises clearly by risk band: Low 9%, Medium 29%, High 47%.
+- Debt-to-income ratio and credit score are the strongest drivers of default.
+
 ## Folder structure
-- `datasets/`: raw and cleaned CSVs (not committed, they contain personal data)
+- `datasets/`: raw and cleaned CSVs (the customers file is not included, it contains personal data)
 - `sql/`: schema and the 10 analytical queries
 - `src/`: `data_load.py`, `features.py`, `train.py`, `risk_score.py`
 - `models/`: `default_model.pkl`, `feature_importance.csv`, `shap_summary.png`, `model_card.md`
 - `notebooks/`: the earlier pre-analysis, cleaning and modelling scripts, run from the project folder
 - `outputs/`: `scored_customers.csv`
 - `dashboard/`: Tableau dashboard (`credit_risk_dashboard.twbx`) and screenshots
-- `documentation/`: PRD and `data_dictionary.md`
+- `documentation/`: PRD, `data_dictionary.md` and the final project report
+- `images/`: README images
 - `main.py`: runs the whole pipeline
 
 ## Setup
@@ -20,7 +31,7 @@ Python 3.11 or later.
 ## Run
 From the project folder:
 
-1. Put the 4 raw CSVs in `datasets/` with these names: `customers (1).csv`, `credit_history.csv`, `loan_applications.csv`, `transactions.csv`.
+1. Put the 4 raw CSVs in `datasets/` with these names: `customers (1).csv`, `credit_history.csv`, `loan_applications.csv`, `transactions.csv`. (The customers file is not in this repo.)
 2. Uncomment the 4 `to_csv` lines in `notebooks/Data Cleaning.py` and run it once to create the cleaned files.
 3. Run the pipeline:
 
@@ -45,6 +56,12 @@ Model: XGBoost, threshold 0.45.
 Four models were compared (Logistic Regression, Decision Tree, Random Forest,
 XGBoost); all plateau at ROC-AUC 0.66 to 0.70. See `models/model_card.md`.
 
+![SHAP summary](images/shap_summary.png)
+
+## Limitations
+- ROC-AUC (0.699) and recall (0.686) are below the PRD targets; all tested models plateau around 0.70, suggesting a signal limit in the data.
+- 809 customers have more than one loan, so some customers appear in both the train and test sets.
+
 ## Outputs
 - `outputs/scored_customers.csv`: one row per customer (3,904 customers) with
   default probability, risk score, risk category and a 0/1 prediction.
@@ -56,3 +73,4 @@ XGBoost); all plateau at ROC-AUC 0.66 to 0.70. See `models/model_card.md`.
 ## Documentation
 - Model card: `models/model_card.md`
 - Data dictionary: `documentation/data_dictionary.md`
+- Final report: `documentation/Final Project report.pdf`
