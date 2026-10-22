@@ -1,0 +1,55 @@
+feature,importance
+debt_to_income_ratio,0.10458314
+credit_score,0.075802855
+applicant_monthly_income,0.058671813
+employment_type_Self-Employed,0.038066383
+total_debit,0.037386928
+ln_to_incm_ratio,0.03375485
+num_late_payments_30d,0.028666357
+trns_count,0.028406378
+years_at_residence,0.027646273
+collateral_flag,0.02680462
+interest_rate,0.026558809
+tenure,0.025834514
+debt_to_lmt_ratio,0.025513487
+loan_type_Home,0.025430169
+credit_utilization_ratio,0.024702292
+oldest_account_age_months,0.024634106
+education_Graduate,0.023714203
+num_open_accounts,0.023468047
+total_credit_limit,0.022583742
+education_Post Graduate,0.02257655
+emi_outflow,0.02196253
+dependents,0.021360839
+avg_bal,0.021279799
+age,0.021220505
+employment_type_Salaried,0.020104364
+total_credit,0.020068634
+existing_emi,0.019922178
+num_credit_inquiries_6m,0.019715985
+residence_type_Family Owned,0.019133933
+total_outstanding_debt,0.018357731
+requested_amount,0.017589469
+net_cash_flow,0.017253451
+loan_term_months,0.016139615
+inflow_outflow_ratio,0.015316079
+gender,0.014233792
+num_defaults_prior,0.011535553
+annual_income,0.0
+kyc_status,0.0
+bankruptcies,0.0
+num_late_payments_90d,0.0
+employment_type_Business Owner,0.0
+employment_type_Retired,0.0
+residence_type_Rented,0.0
+employment_type_Unemployed,0.0
+residence_type_Mortgaged,0.0
+residence_type_Owned,0.0
+loan_type_Education,0.0
+loan_type_Business,0.0
+loan_type_Auto,0.0
+loan_type_Gold,0.0
+education_Diploma,0.0
+loan_type_Personal,0.0
+education_High School,0.0
+education_Professional Degree,0.0
